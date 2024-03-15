@@ -7,7 +7,7 @@ export default function SignUp() {
   const [loading, setLoading] = useState(false);
   const navigate=useNavigate();
 
-  const handleChnage = (e) => {
+  const handleChange = (e) => {
     setFormData({
       ...formData,
       [e.target.id]: e.target.value,
@@ -48,21 +48,21 @@ export default function SignUp() {
           type="text"
           placeholder="username"
           id="username"
-          onChange={handleChnage}
+          onChange={handleChange}
         ></input>
         <input
           className="border p-3 rounded-lg"
           type="email"
           placeholder="email"
           id="email"
-          onChange={handleChnage}
+          onChange={handleChange}
         ></input>
         <input
           className="border p-3 rounded-lg"
           type="password"
           placeholder="password"
           id="password"
-          onChange={handleChnage}
+          onChange={handleChange}
         ></input>
         <button
           disabled={loading}
