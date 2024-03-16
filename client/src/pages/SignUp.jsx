@@ -5,7 +5,7 @@ export default function SignUp() {
   const [formData, setFormData] = useState({});
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
-  const navigate=useNavigate();
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     setFormData({
@@ -26,17 +26,16 @@ export default function SignUp() {
       if (data.success === false) {
         setLoading(false);
         setError(data.message);
-  
+
         return;
       }
       setLoading(false);
       setError(null);
-      navigate('/sign-in');
+      navigate("/sign-in");
     } catch (error) {
       setLoading(false);
       setError(error.message);
     }
-   
   };
 
   return (
@@ -77,6 +76,7 @@ export default function SignUp() {
           <span className="text-blue-700 ">Sign in</span>
         </Link>
       </div>
+      {error && <p className="text-red-500 mt-5">{error}</p>}
     </div>
   );
 }
