@@ -19,6 +19,10 @@ const userSchema = new mongoose.Schema(
       required:true,
       
     },
+    avatar:{
+      type:String,
+      default:"https://images.pexels.com/photos/1570264/pexels-photo-1570264.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    },
   },
   { timestamps: true }
 );
