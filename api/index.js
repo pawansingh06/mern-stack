@@ -1,6 +1,7 @@
 import express from "express";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
+import cookieParser from 'cookie-parser';
 
 import userRouter from "./routes/user.route.js";
 import authRouter from "./routes/auth.route.js";
@@ -20,6 +21,8 @@ mongoose
 const app = express();
 app.use(express.json());
 
+app.use(cookieParser());
+
 app.get("/", (req, res) => {
   res.send("Hello Stocks is there!!");
 });
@@ -28,7 +31,7 @@ app.listen(3000, () => {
   console.log("Server is runnig on port 3000");
 });
 
-app.use("/api", userRouter);
+app.use("/api/user", userRouter);
 app.use("/api/auth", authRouter);
 
 app.use((err, req, res, next) => {
